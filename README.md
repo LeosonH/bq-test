@@ -1,1 +1,1 @@
-# bq-test
+# bigquery-chat
