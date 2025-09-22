@@ -67,7 +67,7 @@ else:
             st.secrets["gcp_service_account"]
         )
         bigquery_client = bigquery.Client(credentials=credentials)             
-        QUERY = response
+        QUERY = response[6:-3]
         print(QUERY)
         #Write Query on BQ
         #QUERY = f"SELECT * FROM {bigquery_table_name} LIMIT 10"
