@@ -7,7 +7,7 @@ import os
 # Show title and description.
 st.title("💬 Chat with BigQuery")
 st.write(
-    "This is a chatbot that uses OpenAI's GPT-4o model to query your database using Natural Language. "
+    "This is a chatbot that uses OpenAI's GPT-3.5 model to query your database using Natural Language. "
     "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
     )
 
@@ -45,7 +45,7 @@ else:
 
         # Generate a response using the OpenAI API.
         stream = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-3.5-turbo",
             messages= [{"role": "system", "content": f"You are a BigQuery SQL generator. Based on this table schema,\
                          respond with only the SQL query needed to answer the user's question. \
                          The table name is {bigquery_table_name}.  It includes the following columns, where the only distinct values of each categorical column are spelled out in the brackets:\
