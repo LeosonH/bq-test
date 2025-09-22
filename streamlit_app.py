@@ -49,7 +49,7 @@ else:
             messages= [{"role": "system", "content": f"You are a BigQuery SQL generator. Based on this table schema,\
                          respond with only the SQL query needed to answer the user's question. \
                          The table name is {bigquery_table_name}.  It includes the following columns:\
-                         Vendor_group, Vendor_service, Analysis_type, Cloud_region, Fin_reporting_products, Org_name, Product_instance_type, Usage_commitment_type, \
+                         Vendor_group (AWS compute, GCP other, AWS other), Vendor_service (VMware, Redshift, BigQuery, CloudSQL), Analysis_type (no region and org specific, region related, org related, machine region and org and machine type), Cloud_region (US, EU, China), Fin_reporting_products, Org_name, Product_instance_type, Usage_commitment_type, \
                          Usage_date, Total_usage_cost, SKU_numbers, Count_of_machine, Folders, Unit_price"}] + 
                       [{"role": m["role"], "content": m["content"]} for m in st.session_state.messages],
             stream=True,
